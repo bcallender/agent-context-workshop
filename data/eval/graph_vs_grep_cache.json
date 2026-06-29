@@ -1,0 +1,853 @@
+{
+ "model": "openrouter:openai/gpt-5.4-mini",
+ "repeat": 5,
+ "records": [
+  {
+   "name": "td-postinglist",
+   "klass": "typedep",
+   "expect": "graph",
+   "win": "capability",
+   "runs": 5,
+   "graph": {
+    "hit": 0.8,
+    "recall": 0.9,
+    "tool_calls": 5.4,
+    "in_tok": 5946.6
+   },
+   "grep": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "tool_calls": 10.2,
+    "in_tok": 35455.4
+   }
+  },
+  {
+   "name": "td-postingvisitor",
+   "klass": "typedep",
+   "expect": "graph",
+   "win": "capability",
+   "runs": 5,
+   "graph": {
+    "hit": 0.8,
+    "recall": 0.934,
+    "tool_calls": 7.4,
+    "in_tok": 4948.8
+   },
+   "grep": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "tool_calls": 7.0,
+    "in_tok": 12410.8
+   }
+  },
+  {
+   "name": "td-valuehandler",
+   "klass": "typedep",
+   "expect": "graph",
+   "win": "completeness",
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "tool_calls": 2.0,
+    "in_tok": 1160.0
+   },
+   "grep": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "tool_calls": 5.4,
+    "in_tok": 8740.2
+   }
+  },
+  {
+   "name": "td-encodedvectors",
+   "klass": "typedep",
+   "expect": "graph",
+   "win": "completeness",
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "tool_calls": 2.2,
+    "in_tok": 2685.0
+   },
+   "grep": {
+    "hit": 0.2,
+    "recall": 0.8,
+    "tool_calls": 16.6,
+    "in_tok": 60880.4
+   }
+  },
+  {
+   "name": "td-vectorparameters",
+   "klass": "typedep",
+   "expect": "graph",
+   "win": "capability",
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "tool_calls": 2.2,
+    "in_tok": 2006.2
+   },
+   "grep": {
+    "hit": 0.6,
+    "recall": 0.3,
+    "tool_calls": 8.2,
+    "in_tok": 35423.2
+   }
+  },
+  {
+   "name": "td-encodingerror",
+   "klass": "typedep",
+   "expect": "graph",
+   "win": "capability",
+   "runs": 5,
+   "graph": {
+    "hit": 0.0,
+    "recall": 0.56,
+    "tool_calls": 12.2,
+    "in_tok": 20200.4
+   },
+   "grep": {
+    "hit": 0.0,
+    "recall": 0.8,
+    "tool_calls": 7.8,
+    "in_tok": 35061.2
+   }
+  },
+  {
+   "name": "td-tqmode",
+   "klass": "typedep",
+   "expect": "graph",
+   "win": "capability",
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "tool_calls": 3.8,
+    "in_tok": 3030.4
+   },
+   "grep": {
+    "hit": 0.4,
+    "recall": 0.666,
+    "tool_calls": 11.8,
+    "in_tok": 61809.0
+   }
+  },
+  {
+   "name": "td-storageoptions",
+   "klass": "typedep",
+   "expect": "graph",
+   "win": "capability",
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": 0.3,
+    "tool_calls": 12.8,
+    "in_tok": 24516.2
+   },
+   "grep": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "tool_calls": 4.0,
+    "in_tok": 19377.6
+   }
+  },
+  {
+   "name": "td-compression",
+   "klass": "typedep",
+   "expect": "graph",
+   "win": "capability",
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "tool_calls": 3.2,
+    "in_tok": 3012.0
+   },
+   "grep": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "tool_calls": 4.0,
+    "in_tok": 11232.0
+   }
+  },
+  {
+   "name": "td-idtracker",
+   "klass": "typedep",
+   "expect": "graph",
+   "win": "completeness",
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "tool_calls": 2.6,
+    "in_tok": 16582.0
+   },
+   "grep": {
+    "hit": 0.4,
+    "recall": 0.85,
+    "tool_calls": 7.2,
+    "in_tok": 17368.4
+   }
+  },
+  {
+   "name": "td-vectorindex",
+   "klass": "typedep",
+   "expect": "graph",
+   "win": "completeness",
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "tool_calls": 2.4,
+    "in_tok": 3627.4
+   },
+   "grep": {
+    "hit": 0.2,
+    "recall": 0.8,
+    "tool_calls": 7.8,
+    "in_tok": 18767.0
+   }
+  },
+  {
+   "name": "td-queryscorer",
+   "klass": "typedep",
+   "expect": "graph",
+   "win": "completeness",
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "tool_calls": 2.4,
+    "in_tok": 3507.2
+   },
+   "grep": {
+    "hit": 0.4,
+    "recall": 0.486,
+    "tool_calls": 10.8,
+    "in_tok": 28707.8
+   }
+  },
+  {
+   "name": "td-vectorstorage",
+   "klass": "typedep",
+   "expect": "graph",
+   "win": "completeness",
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "tool_calls": 2.2,
+    "in_tok": 3265.6
+   },
+   "grep": {
+    "hit": 0.0,
+    "recall": 0.5,
+    "tool_calls": 4.2,
+    "in_tok": 4782.4
+   }
+  },
+  {
+   "name": "td-distance",
+   "klass": "typedep",
+   "expect": "graph",
+   "win": "capability",
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "tool_calls": 2.0,
+    "in_tok": 12826.8
+   },
+   "grep": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "tool_calls": 6.8,
+    "in_tok": 27595.2
+   }
+  },
+  {
+   "name": "td-scoredpoint",
+   "klass": "typedep",
+   "expect": "graph",
+   "win": "capability",
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "tool_calls": 8.6,
+    "in_tok": 18878.4
+   },
+   "grep": {
+    "hit": 0.8,
+    "recall": 0.9,
+    "tool_calls": 8.6,
+    "in_tok": 41337.4
+   }
+  },
+  {
+   "name": "col-pl-sparse",
+   "klass": "collision",
+   "expect": "graph",
+   "win": null,
+   "runs": 5,
+   "graph": {
+    "hit": 0.0,
+    "recall": null,
+    "tool_calls": 5.2,
+    "in_tok": 4063.2
+   },
+   "grep": {
+    "hit": 1.0,
+    "recall": null,
+    "tool_calls": 5.8,
+    "in_tok": 13908.4
+   }
+  },
+  {
+   "name": "col-pl-general",
+   "klass": "collision",
+   "expect": "graph",
+   "win": null,
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": null,
+    "tool_calls": 1.0,
+    "in_tok": 1262.0
+   },
+   "grep": {
+    "hit": 1.0,
+    "recall": null,
+    "tool_calls": 5.0,
+    "in_tok": 14922.2
+   }
+  },
+  {
+   "name": "col-pb-sparse",
+   "klass": "collision",
+   "expect": "graph",
+   "win": null,
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": null,
+    "tool_calls": 3.0,
+    "in_tok": 1762.2
+   },
+   "grep": {
+    "hit": 1.0,
+    "recall": null,
+    "tool_calls": 6.6,
+    "in_tok": 15123.6
+   }
+  },
+  {
+   "name": "col-pb-general",
+   "klass": "collision",
+   "expect": "graph",
+   "win": null,
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": null,
+    "tool_calls": 1.4,
+    "in_tok": 1445.0
+   },
+   "grep": {
+    "hit": 1.0,
+    "recall": null,
+    "tool_calls": 4.0,
+    "in_tok": 12955.6
+   }
+  },
+  {
+   "name": "col-pe-sparse",
+   "klass": "collision",
+   "expect": "graph",
+   "win": null,
+   "runs": 5,
+   "graph": {
+    "hit": 0.2,
+    "recall": null,
+    "tool_calls": 6.8,
+    "in_tok": 9784.4
+   },
+   "grep": {
+    "hit": 0.2,
+    "recall": null,
+    "tool_calls": 5.0,
+    "in_tok": 20353.4
+   }
+  },
+  {
+   "name": "col-pe-general",
+   "klass": "collision",
+   "expect": "graph",
+   "win": null,
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": null,
+    "tool_calls": 3.4,
+    "in_tok": 3242.2
+   },
+   "grep": {
+    "hit": 0.0,
+    "recall": null,
+    "tool_calls": 4.8,
+    "in_tok": 10788.0
+   }
+  },
+  {
+   "name": "pv-compressed-size",
+   "klass": "private",
+   "expect": "grep",
+   "win": null,
+   "runs": 5,
+   "graph": {
+    "hit": 0.0,
+    "recall": null,
+    "tool_calls": 8.8,
+    "in_tok": 13140.6
+   },
+   "grep": {
+    "hit": 0.0,
+    "recall": null,
+    "tool_calls": 5.0,
+    "in_tok": 21967.2
+   }
+  },
+  {
+   "name": "pv-search-ge",
+   "klass": "private",
+   "expect": "grep",
+   "win": null,
+   "runs": 5,
+   "graph": {
+    "hit": 0.0,
+    "recall": null,
+    "tool_calls": 6.6,
+    "in_tok": 3296.8
+   },
+   "grep": {
+    "hit": 0.8,
+    "recall": null,
+    "tool_calls": 4.4,
+    "in_tok": 22457.6
+   }
+  },
+  {
+   "name": "pv-process-last",
+   "klass": "private",
+   "expect": "grep",
+   "win": null,
+   "runs": 5,
+   "graph": {
+    "hit": 0.0,
+    "recall": null,
+    "tool_calls": 10.8,
+    "in_tok": 12719.6
+   },
+   "grep": {
+    "hit": 0.8,
+    "recall": null,
+    "tool_calls": 5.6,
+    "in_tok": 25139.8
+   }
+  },
+  {
+   "name": "pv-promote-longest",
+   "klass": "private",
+   "expect": "grep",
+   "win": null,
+   "runs": 5,
+   "graph": {
+    "hit": 0.0,
+    "recall": null,
+    "tool_calls": 6.6,
+    "in_tok": 5048.0
+   },
+   "grep": {
+    "hit": 0.4,
+    "recall": null,
+    "tool_calls": 6.6,
+    "in_tok": 34933.4
+   }
+  },
+  {
+   "name": "pv-tracker-open",
+   "klass": "private",
+   "expect": "grep",
+   "win": null,
+   "runs": 5,
+   "graph": {
+    "hit": 0.0,
+    "recall": null,
+    "tool_calls": 10.4,
+    "in_tok": 20173.4
+   },
+   "grep": {
+    "hit": 0.6,
+    "recall": null,
+    "tool_calls": 4.2,
+    "in_tok": 16698.2
+   }
+  },
+  {
+   "name": "ctl-view",
+   "klass": "control",
+   "expect": "both",
+   "win": null,
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": null,
+    "tool_calls": 2.6,
+    "in_tok": 2143.4
+   },
+   "grep": {
+    "hit": 0.2,
+    "recall": null,
+    "tool_calls": 4.8,
+    "in_tok": 16798.8
+   }
+  },
+  {
+   "name": "ctl-distancetype",
+   "klass": "control",
+   "expect": "both",
+   "win": null,
+   "runs": 5,
+   "graph": {
+    "hit": 0.0,
+    "recall": null,
+    "tool_calls": 8.8,
+    "in_tok": 15891.6
+   },
+   "grep": {
+    "hit": 0.8,
+    "recall": null,
+    "tool_calls": 5.0,
+    "in_tok": 14272.2
+   }
+  },
+  {
+   "name": "ctl-geopoint",
+   "klass": "control",
+   "expect": "both",
+   "win": null,
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": null,
+    "tool_calls": 1.0,
+    "in_tok": 862.2
+   },
+   "grep": {
+    "hit": 0.8,
+    "recall": null,
+    "tool_calls": 3.4,
+    "in_tok": 16092.0
+   }
+  },
+  {
+   "name": "ctl-gridstoreerror",
+   "klass": "control",
+   "expect": "both",
+   "win": null,
+   "runs": 5,
+   "graph": {
+    "hit": 1.0,
+    "recall": null,
+    "tool_calls": 2.8,
+    "in_tok": 2292.6
+   },
+   "grep": {
+    "hit": 1.0,
+    "recall": null,
+    "tool_calls": 5.4,
+    "in_tok": 20300.6
+   }
+  }
+ ],
+ "adoption": [
+  {
+   "name": "td-postinglist",
+   "klass": "typedep",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.338
+   },
+   "nudged": {
+    "adoption": 0.642
+   }
+  },
+  {
+   "name": "td-postingvisitor",
+   "klass": "typedep",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.316
+   },
+   "nudged": {
+    "adoption": 0.418
+   }
+  },
+  {
+   "name": "td-valuehandler",
+   "klass": "typedep",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.226
+   },
+   "nudged": {
+    "adoption": 0.934
+   }
+  },
+  {
+   "name": "td-encodedvectors",
+   "klass": "typedep",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.2
+   },
+   "nudged": {
+    "adoption": 0.85
+   }
+  },
+  {
+   "name": "td-vectorparameters",
+   "klass": "typedep",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.372
+   },
+   "nudged": {
+    "adoption": 0.784
+   }
+  },
+  {
+   "name": "td-encodingerror",
+   "klass": "typedep",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.1
+   },
+   "nudged": {
+    "adoption": 0.38
+   }
+  },
+  {
+   "name": "td-tqmode",
+   "klass": "typedep",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.332
+   },
+   "nudged": {
+    "adoption": 0.734
+   }
+  },
+  {
+   "name": "td-storageoptions",
+   "klass": "typedep",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.522
+   },
+   "nudged": {
+    "adoption": 0.712
+   }
+  },
+  {
+   "name": "td-compression",
+   "klass": "typedep",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.6
+   },
+   "nudged": {
+    "adoption": 0.868
+   }
+  },
+  {
+   "name": "td-idtracker",
+   "klass": "typedep",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.438
+   },
+   "nudged": {
+    "adoption": 1.0
+   }
+  },
+  {
+   "name": "td-vectorindex",
+   "klass": "typedep",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.352
+   },
+   "nudged": {
+    "adoption": 1.0
+   }
+  },
+  {
+   "name": "td-queryscorer",
+   "klass": "typedep",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.158
+   },
+   "nudged": {
+    "adoption": 1.0
+   }
+  },
+  {
+   "name": "td-vectorstorage",
+   "klass": "typedep",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.422
+   },
+   "nudged": {
+    "adoption": 1.0
+   }
+  },
+  {
+   "name": "td-distance",
+   "klass": "typedep",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.474
+   },
+   "nudged": {
+    "adoption": 0.934
+   }
+  },
+  {
+   "name": "td-scoredpoint",
+   "klass": "typedep",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.27
+   },
+   "nudged": {
+    "adoption": 0.842
+   }
+  },
+  {
+   "name": "col-pl-sparse",
+   "klass": "collision",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.246
+   },
+   "nudged": {
+    "adoption": 0.298
+   }
+  },
+  {
+   "name": "col-pl-general",
+   "klass": "collision",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.356
+   },
+   "nudged": {
+    "adoption": 0.5
+   }
+  },
+  {
+   "name": "col-pb-sparse",
+   "klass": "collision",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.216
+   },
+   "nudged": {
+    "adoption": 0.312
+   }
+  },
+  {
+   "name": "col-pb-general",
+   "klass": "collision",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.718
+   },
+   "nudged": {
+    "adoption": 0.566
+   }
+  },
+  {
+   "name": "col-pe-sparse",
+   "klass": "collision",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.21
+   },
+   "nudged": {
+    "adoption": 0.58
+   }
+  },
+  {
+   "name": "col-pe-general",
+   "klass": "collision",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.398
+   },
+   "nudged": {
+    "adoption": 0.634
+   }
+  },
+  {
+   "name": "ctl-view",
+   "klass": "control",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.306
+   },
+   "nudged": {
+    "adoption": 0.6
+   }
+  },
+  {
+   "name": "ctl-distancetype",
+   "klass": "control",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.202
+   },
+   "nudged": {
+    "adoption": 0.696
+   }
+  },
+  {
+   "name": "ctl-geopoint",
+   "klass": "control",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.432
+   },
+   "nudged": {
+    "adoption": 1.0
+   }
+  },
+  {
+   "name": "ctl-gridstoreerror",
+   "klass": "control",
+   "runs": 5,
+   "naive": {
+    "adoption": 0.264
+   },
+   "nudged": {
+    "adoption": 0.778
+   }
+  }
+ ]
+}

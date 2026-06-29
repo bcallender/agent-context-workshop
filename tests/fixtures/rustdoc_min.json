@@ -1,0 +1,18 @@
+{
+  "root": 0,
+  "crate_version": null,
+  "includes_private": false,
+  "index": {
+    "0": {"id": 0, "crate_id": 0, "name": "mycrate", "span": null, "visibility": "public", "docs": null, "inner": {"module": {"is_crate": true, "items": [1, 2, 3], "is_stripped": false}}},
+    "1": {"id": 1, "crate_id": 0, "name": "Thing", "span": {"filename": "src/inner.rs", "begin": [3, 1], "end": [5, 2]}, "visibility": "public", "docs": "A thing.", "inner": {"struct": {"kind": {"unit": true}}}},
+    "2": {"id": 2, "crate_id": 0, "name": "Thing", "span": null, "visibility": "public", "docs": null, "inner": {"use": {"source": "inner::Thing", "name": "Thing", "id": 1, "is_glob": false}}},
+    "3": {"id": 3, "crate_id": 0, "name": null, "span": {"filename": "src/inner.rs", "begin": [7, 1], "end": [11, 2]}, "visibility": "public", "docs": null, "inner": {"impl": {"is_unsafe": false, "generics": {"params": [], "where_predicates": []}, "provided_trait_methods": [], "trait": null, "for": {"resolved_path": {"path": "mycrate::inner::Thing", "id": 1, "args": null, "param_names": []}}, "items": [4], "negative": false, "synthetic": false, "blanket_impl": null}}},
+    "4": {"id": 4, "crate_id": 0, "name": "new", "span": {"filename": "src/inner.rs", "begin": [8, 5], "end": [10, 6]}, "visibility": "public", "docs": "Creates a thing.", "inner": {"function": {"sig": {"inputs": [], "output": null, "is_c_variadic": false}, "generics": {"params": [], "where_predicates": []}, "header": {"is_const": false, "is_unsafe": false, "is_async": false, "abi": "Rust"}}}}
+  },
+  "paths": {
+    "1": {"crate_id": 0, "path": ["mycrate", "inner", "Thing"], "kind": "struct"},
+    "2": {"crate_id": 0, "path": ["mycrate", "Thing"], "kind": "struct"}
+  },
+  "external_crates": {},
+  "format_version": 57
+}

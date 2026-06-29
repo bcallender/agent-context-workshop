@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+*.egg-info/
+
+# Local environment / secrets
+.env
+.env.*
+!.env.example
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Workshop data and caches
+data/raw_repos/*
+!data/raw_repos/.gitkeep
+data/cache/*
+!data/cache/.gitkeep
+*.duckdb
+*.duckdb.wal
+*.parquet
+
+# Internal scratch / planning — never shipped to the public repo
+.context/
+.superpowers/
+docs/superpowers/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+
+# Eval scratch — never published
+data/eval/fixcheck_*.json
+data/eval/models/

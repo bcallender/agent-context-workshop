@@ -1,0 +1,643 @@
+[
+ {
+  "name": "td-postinglist",
+  "klass": "typedep",
+  "crate": "posting_list",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "I'm about to change the public `PostingList` in the `posting_list` crate. Which other public types in the crate directly depend on it (build it, return it, or borrow it) so I know what to check?",
+  "anchors": [
+   {
+    "symbol": "PostingBuilder",
+    "mode": "named"
+   },
+   {
+    "symbol": "PostingListView",
+    "mode": "named"
+   }
+  ],
+  "dependents": [
+   "posting_list::builder::PostingBuilder",
+   "posting_list::view::PostingListView"
+  ],
+  "win": "capability",
+  "cross_crate": false,
+  "advantage": "capability"
+ },
+ {
+  "name": "td-postingvisitor",
+  "klass": "typedep",
+  "crate": "posting_list",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "Which public methods or types directly return or take `posting_list::PostingVisitor`?",
+  "anchors": [
+   {
+    "symbol": "PostingIterator",
+    "mode": "named"
+   }
+  ],
+  "dependents": [
+   "posting_list::iterator::PostingIterator",
+   "posting_list::posting_list::PostingList",
+   "posting_list::view::PostingListView"
+  ],
+  "win": "capability",
+  "cross_crate": false,
+  "advantage": "capability"
+ },
+ {
+  "name": "td-valuehandler",
+  "klass": "typedep",
+  "crate": "posting_list",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "I want to modify the `ValueHandler` trait in `posting_list`. What types implement it?",
+  "anchors": [
+   {
+    "symbol": "SizedHandler",
+    "mode": "named"
+   },
+   {
+    "symbol": "UnsizedHandler",
+    "mode": "named"
+   }
+  ],
+  "dependents": [
+   "posting_list::value_handler::SizedHandler",
+   "posting_list::value_handler::UnsizedHandler"
+  ],
+  "win": "completeness",
+  "cross_crate": false,
+  "advantage": "completeness"
+ },
+ {
+  "name": "td-encodedvectors",
+  "klass": "typedep",
+  "crate": "quantization",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "I'm changing the `EncodedVectors` trait in `quantization`. What implements it (including anything outside the quantization crate)?",
+  "anchors": [
+   {
+    "symbol": "EncodedVectorsU8",
+    "mode": "named"
+   },
+   {
+    "symbol": "QuantizedMultivectorStorage",
+    "mode": "named",
+    "crate": "segment"
+   }
+  ],
+  "dependents": [
+   "quantization::encoded_vectors_u8::EncodedVectorsU8",
+   "quantization::encoded_vectors_binary::EncodedVectorsBin",
+   "quantization::encoded_vectors_pq::EncodedVectorsPQ",
+   "quantization::encoded_vectors_tq::EncodedVectorsTQ",
+   "segment::vector_storage::quantized::quantized_multivector_storage::QuantizedMultivectorStorage"
+  ],
+  "win": "completeness",
+  "cross_crate": true,
+  "advantage": "completeness"
+ },
+ {
+  "name": "td-vectorparameters",
+  "klass": "typedep",
+  "crate": "quantization",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "If I change `quantization::VectorParameters`, what depends on it (across crates)?",
+  "anchors": [
+   {
+    "symbol": "QuantizedVectorsConfig",
+    "mode": "named",
+    "crate": "segment"
+   }
+  ],
+  "dependents": [
+   "quantization::encoded_vectors_pq::Metadata",
+   "quantization::encoded_vectors_tq::Metadata",
+   "segment::vector_storage::quantized::quantized_vectors::QuantizedVectorsConfig"
+  ],
+  "win": "capability",
+  "cross_crate": true,
+  "advantage": "capability"
+ },
+ {
+  "name": "td-encodingerror",
+  "klass": "typedep",
+  "crate": "quantization",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "Which encoder types in `quantization` have an `encode` path that returns `EncodingError`?",
+  "anchors": [
+   {
+    "symbol": "EncodedVectorsU8",
+    "mode": "named"
+   },
+   {
+    "symbol": "kmeans",
+    "mode": "named"
+   }
+  ],
+  "dependents": [
+   "quantization::encoded_vectors_u8::EncodedVectorsU8",
+   "quantization::encoded_vectors_binary::EncodedVectorsBin",
+   "quantization::encoded_vectors_pq::EncodedVectorsPQ",
+   "quantization::encoded_vectors_tq::EncodedVectorsTQ",
+   "quantization::kmeans::kmeans"
+  ],
+  "win": "capability",
+  "cross_crate": true,
+  "advantage": "capability"
+ },
+ {
+  "name": "td-tqmode",
+  "klass": "typedep",
+  "crate": "quantization",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "What depends on `quantization::turboquant::TQMode` \u2014 i.e. what would I touch if I changed it?",
+  "anchors": [
+   {
+    "symbol": "EncodedVectorsTQ",
+    "mode": "named"
+   },
+   {
+    "symbol": "TurboQuantizer",
+    "mode": "named"
+   }
+  ],
+  "dependents": [
+   "quantization::encoded_vectors_tq::EncodedVectorsTQ",
+   "quantization::encoded_vectors_tq::Metadata",
+   "quantization::turboquant::quantization::TurboQuantizer"
+  ],
+  "win": "capability",
+  "cross_crate": false,
+  "advantage": "capability"
+ },
+ {
+  "name": "td-storageoptions",
+  "klass": "typedep",
+  "crate": "gridstore",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "Which public `Gridstore` constructors take `gridstore::config::StorageOptions`?",
+  "anchors": [
+   {
+    "symbol": "Gridstore",
+    "mode": "named"
+   }
+  ],
+  "dependents": [
+   "gridstore::gridstore::Gridstore::new",
+   "gridstore::gridstore::Gridstore::open_or_create"
+  ],
+  "win": "capability",
+  "cross_crate": false,
+  "advantage": "capability"
+ },
+ {
+  "name": "td-compression",
+  "klass": "typedep",
+  "crate": "gridstore",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "If I change `gridstore::config::Compression`, what config type holds it?",
+  "anchors": [
+   {
+    "symbol": "StorageOptions",
+    "mode": "named"
+   }
+  ],
+  "dependents": [
+   "gridstore::config::StorageOptions"
+  ],
+  "win": "capability",
+  "cross_crate": false,
+  "advantage": "capability"
+ },
+ {
+  "name": "td-idtracker",
+  "klass": "typedep",
+  "crate": "segment",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "I'm changing the `IdTracker` trait in `segment`. What implements it?",
+  "anchors": [
+   {
+    "symbol": "MutableIdTracker",
+    "mode": "named"
+   },
+   {
+    "symbol": "ImmutableIdTracker",
+    "mode": "named"
+   }
+  ],
+  "dependents": [
+   "segment::id_tracker::id_tracker_base::tracker_enum::IdTrackerEnum",
+   "segment::id_tracker::immutable_id_tracker::ImmutableIdTracker",
+   "segment::id_tracker::in_memory_id_tracker::InMemoryIdTracker",
+   "segment::id_tracker::mutable_id_tracker::MutableIdTracker"
+  ],
+  "win": "completeness",
+  "cross_crate": false,
+  "advantage": "completeness"
+ },
+ {
+  "name": "td-vectorindex",
+  "klass": "typedep",
+  "crate": "segment",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "What implements the `VectorIndex` trait in `segment`?",
+  "anchors": [
+   {
+    "symbol": "HNSWIndex",
+    "mode": "named"
+   },
+   {
+    "symbol": "SparseVectorIndex",
+    "mode": "named"
+   }
+  ],
+  "dependents": [
+   "segment::index::hnsw_index::hnsw::HNSWIndex",
+   "segment::index::plain_vector_index::PlainVectorIndex",
+   "segment::index::sparse_index::sparse_vector_index::SparseVectorIndex",
+   "segment::index::vector_index_base::VectorIndexEnum"
+  ],
+  "win": "completeness",
+  "cross_crate": false,
+  "advantage": "completeness"
+ },
+ {
+  "name": "td-queryscorer",
+  "klass": "typedep",
+  "crate": "segment",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "I'm changing the `QueryScorer` trait in `segment`. What implements it that I'd need to update?",
+  "anchors": [
+   {
+    "symbol": "MetricQueryScorer",
+    "mode": "named"
+   },
+   {
+    "symbol": "QuantizedQueryScorer",
+    "mode": "named"
+   }
+  ],
+  "dependents": [
+   "segment::vector_storage::quantized::quantized_query_scorer::QuantizedQueryScorer",
+   "segment::vector_storage::query_scorer::custom_query_scorer::CustomQueryScorer",
+   "segment::vector_storage::query_scorer::metric_query_scorer::MetricQueryScorer",
+   "segment::vector_storage::query_scorer::multi_custom_query_scorer::MultiCustomQueryScorer",
+   "segment::vector_storage::query_scorer::multi_metric_query_scorer::MultiMetricQueryScorer",
+   "segment::vector_storage::query_scorer::sparse_custom_query_scorer::SparseCustomQueryScorer",
+   "segment::vector_storage::query_scorer::sparse_metric_query_scorer::SparseMetricQueryScorer"
+  ],
+  "win": "completeness",
+  "cross_crate": false,
+  "advantage": "completeness"
+ },
+ {
+  "name": "td-vectorstorage",
+  "klass": "typedep",
+  "crate": "segment",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "What implements the `VectorStorage` trait in `segment`? Name all of them.",
+  "anchors": [
+   {
+    "symbol": "DenseVectorStorageImpl",
+    "mode": "named"
+   },
+   {
+    "symbol": "VectorStorageEnum",
+    "mode": "named"
+   }
+  ],
+  "dependents": [
+   "segment::vector_storage::dense::dense_vector_storage::DenseVectorStorageImpl",
+   "segment::vector_storage::dense::appendable_dense_vector_storage::AppendableMmapDenseVectorStorage",
+   "segment::vector_storage::dense::empty_dense_vector_storage::EmptyDenseVectorStorage",
+   "segment::vector_storage::dense::volatile_dense_vector_storage::VolatileDenseVectorStorage",
+   "segment::vector_storage::multi_dense::appendable_mmap_multi_dense_vector_storage::AppendableMmapMultiDenseVectorStorage",
+   "segment::vector_storage::multi_dense::volatile_multi_dense_vector_storage::VolatileMultiDenseVectorStorage",
+   "segment::vector_storage::sparse::empty_sparse_vector_storage::EmptySparseVectorStorage",
+   "segment::vector_storage::sparse::mmap_sparse_vector_storage::MmapSparseVectorStorage",
+   "segment::vector_storage::sparse::volatile_sparse_vector_storage::VolatileSparseVectorStorage",
+   "segment::vector_storage::vector_storage_base::VectorStorageEnum"
+  ],
+  "win": "completeness",
+  "cross_crate": false,
+  "advantage": "completeness"
+ },
+ {
+  "name": "td-distance",
+  "klass": "typedep",
+  "crate": "segment",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "`segment::types::Distance` drives metric selection. Name the distance-metric implementations that depend on it.",
+  "anchors": [
+   {
+    "symbol": "CosineMetric",
+    "mode": "named"
+   },
+   {
+    "symbol": "EuclidMetric",
+    "mode": "named"
+   }
+  ],
+  "dependents": [
+   "segment::spaces::simple::CosineMetric",
+   "segment::spaces::simple::DotProductMetric",
+   "segment::spaces::simple::EuclidMetric",
+   "segment::spaces::simple::ManhattanMetric"
+  ],
+  "win": "capability",
+  "cross_crate": false,
+  "advantage": "capability"
+ },
+ {
+  "name": "td-scoredpoint",
+  "klass": "typedep",
+  "crate": "segment",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "Which scoring/fusion functions in `segment` return or take `segment::types::ScoredPoint`?",
+  "anchors": [
+   {
+    "symbol": "score_fusion",
+    "mode": "named"
+   },
+   {
+    "symbol": "rrf_scoring",
+    "mode": "named"
+   }
+  ],
+  "dependents": [
+   "segment::common::reciprocal_rank_fusion::rrf_scoring",
+   "segment::common::score_fusion::score_fusion"
+  ],
+  "win": "capability",
+  "cross_crate": false,
+  "advantage": "capability"
+ },
+ {
+  "name": "col-pl-sparse",
+  "klass": "collision",
+  "crate": "sparse",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "I'm storing sparse vectors and need the posting-list type built for them. There are multiple `PostingList` types here \u2014 which one do I use, and where is it defined?",
+  "anchors": [
+   {
+    "basename": "posting_list.rs",
+    "line": 12,
+    "symbol": "PostingList",
+    "crate": "sparse"
+   }
+  ],
+  "advantage": "efficiency"
+ },
+ {
+  "name": "col-pl-general",
+  "klass": "collision",
+  "crate": "posting_list",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "I want the general compressed posting list (not the sparse-index one) \u2014 which `PostingList`, and where is it defined?",
+  "anchors": [
+   {
+    "basename": "posting_list.rs",
+    "line": 27,
+    "symbol": "PostingList",
+    "crate": "posting_list"
+   }
+  ],
+  "advantage": "efficiency"
+ },
+ {
+  "name": "col-pb-sparse",
+  "klass": "collision",
+  "crate": "sparse",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "Building posting lists for sparse vectors \u2014 which `PostingBuilder` do I use, and where is it?",
+  "anchors": [
+   {
+    "basename": "posting_list.rs",
+    "line": 117,
+    "symbol": "PostingBuilder",
+    "crate": "sparse"
+   }
+  ],
+  "advantage": "efficiency"
+ },
+ {
+  "name": "col-pb-general",
+  "klass": "collision",
+  "crate": "posting_list",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "Which `PostingBuilder` builds lists in the general `posting_list` crate, and where is it defined?",
+  "anchors": [
+   {
+    "basename": "builder.rs",
+    "line": 11,
+    "symbol": "PostingBuilder",
+    "crate": "posting_list"
+   }
+  ],
+  "advantage": "efficiency"
+ },
+ {
+  "name": "col-pe-sparse",
+  "klass": "collision",
+  "crate": "sparse",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "When I iterate a sparse posting list, what element type do I get back, and where is it defined?",
+  "anchors": [
+   {
+    "basename": "posting_list_common.rs",
+    "line": 19,
+    "symbol": "PostingElement",
+    "crate": "sparse"
+   }
+  ],
+  "advantage": "efficiency"
+ },
+ {
+  "name": "col-pe-general",
+  "klass": "collision",
+  "crate": "posting_list",
+  "expect": "graph",
+  "confidence": "high",
+  "q": "In the general `posting_list` crate, what is the element type of a posting list, and where is it?",
+  "anchors": [
+   {
+    "basename": "posting_list.rs",
+    "line": 52,
+    "symbol": "PostingElement",
+    "crate": "posting_list"
+   }
+  ],
+  "advantage": "efficiency"
+ },
+ {
+  "name": "pv-compressed-size",
+  "klass": "private",
+  "crate": "posting_list",
+  "expect": "grep",
+  "confidence": "high",
+  "q": "I want a posting list's compressed size in bytes. Is there already an internal helper that computes the compressed size of one encoded chunk I can follow?",
+  "anchors": [
+   {
+    "basename": "posting_list.rs",
+    "line": 72,
+    "symbol": "get_compressed_size"
+   }
+  ],
+  "advantage": "boundary"
+ },
+ {
+  "name": "pv-search-ge",
+  "klass": "private",
+  "crate": "posting_list",
+  "expect": "grep",
+  "confidence": "high",
+  "q": "When the visitor skips ahead during a merge, where's the routine that searches for the first element with id greater than or equal to a target?",
+  "anchors": [
+   {
+    "basename": "visitor.rs",
+    "line": 53,
+    "symbol": "search_greater_or_equal"
+   }
+  ],
+  "advantage": "boundary"
+ },
+ {
+  "name": "pv-process-last",
+  "klass": "private",
+  "crate": "sparse",
+  "expect": "grep",
+  "confidence": "high",
+  "q": "In sparse search, once all but one of the active lists are exhausted, where's the specialized path that finishes scoring the remainder?",
+  "anchors": [
+   {
+    "basename": "search_context.rs",
+    "line": 198,
+    "symbol": "process_last_posting_list",
+    "crate": "sparse"
+   }
+  ],
+  "advantage": "boundary"
+ },
+ {
+  "name": "pv-promote-longest",
+  "klass": "private",
+  "crate": "sparse",
+  "expect": "grep",
+  "confidence": "high",
+  "q": "In the sparse search context, where's the routine that reorders the active lists so the largest one is handled first?",
+  "anchors": [
+   {
+    "basename": "search_context.rs",
+    "line": 240,
+    "symbol": "promote_longest_posting_lists_to_the_front",
+    "crate": "sparse"
+   }
+  ],
+  "advantage": "boundary"
+ },
+ {
+  "name": "pv-tracker-open",
+  "klass": "private",
+  "crate": "gridstore",
+  "expect": "grep",
+  "confidence": "high",
+  "q": "In gridstore, where are the open options for the tracker file configured \u2014 random access, no populate?",
+  "anchors": [
+   {
+    "basename": "tracker.rs",
+    "line": 24,
+    "symbol": "tracker_open_options",
+    "crate": "gridstore"
+   }
+  ],
+  "advantage": "boundary"
+ },
+ {
+  "name": "ctl-view",
+  "klass": "control",
+  "crate": "posting_list",
+  "expect": "both",
+  "confidence": "high",
+  "q": "What non-owning view type lets me borrow a `posting_list::PostingList` without copying, and where is it defined?",
+  "anchors": [
+   {
+    "basename": "view.rs",
+    "line": 16,
+    "symbol": "PostingListView",
+    "crate": "posting_list"
+   }
+  ],
+  "advantage": "parity"
+ },
+ {
+  "name": "ctl-distancetype",
+  "klass": "control",
+  "crate": "quantization",
+  "expect": "both",
+  "confidence": "high",
+  "q": "In `quantization`, what type represents the distance metric for encoded vectors, and where is it defined?",
+  "anchors": [
+   {
+    "basename": "encoded_vectors.rs",
+    "line": 13,
+    "symbol": "DistanceType",
+    "crate": "quantization"
+   }
+  ],
+  "advantage": "parity"
+ },
+ {
+  "name": "ctl-geopoint",
+  "klass": "control",
+  "crate": "segment",
+  "expect": "both",
+  "confidence": "high",
+  "q": "Where is `segment`'s `GeoPoint` type defined?",
+  "anchors": [
+   {
+    "basename": "types.rs",
+    "line": 1907,
+    "symbol": "GeoPoint",
+    "crate": "segment"
+   }
+  ],
+  "advantage": "parity"
+ },
+ {
+  "name": "ctl-gridstoreerror",
+  "klass": "control",
+  "crate": "gridstore",
+  "expect": "both",
+  "confidence": "high",
+  "q": "What is gridstore's top-level error type called, and where is it defined?",
+  "anchors": [
+   {
+    "basename": "error.rs",
+    "line": 7,
+    "symbol": "GridstoreError",
+    "crate": "gridstore"
+   }
+  ],
+  "advantage": "parity"
+ }
+]

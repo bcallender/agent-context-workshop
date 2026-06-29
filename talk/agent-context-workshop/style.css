@@ -1,0 +1,93 @@
+/* Typedef brand theme — GLOBAL (applies to every slide).
+   A <style> block in a slide is always slide-scoped, so the theme has to live here. */
+
+:root {
+  --slidev-theme-primary: #829df3;
+}
+
+/* Force the dark canvas on every slide, regardless of the system color scheme. */
+html,
+body,
+#app,
+.slidev-layout,
+.slidev-page {
+  background: #111111 !important;
+  color: #e0e0e0;
+}
+
+/* Headings — Typedef blue */
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3 {
+  color: #829df3 !important;
+}
+
+.slidev-layout.cover h1,
+.slidev-layout.intro h1 {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+/* Accent system */
+.slidev-layout strong { color: #77f19a; }   /* green — the win */
+.slidev-layout em { color: #ffbf30; }        /* gold — emphasis */
+.slidev-layout a { color: #829df3; }
+
+/* Inline code */
+.slidev-layout code:not(pre code) {
+  background: #29394e;
+  color: #77f19a;
+  border-radius: 4px;
+  padding: 0.05em 0.35em;
+}
+
+/* Code blocks — keep dark even if Shiki would default to a light theme */
+.slidev-layout pre,
+.slidev-layout .slidev-code {
+  background: #181f2e !important;
+}
+
+/* Blockquote → gold callout */
+.slidev-layout blockquote {
+  border-left: 3px solid #ffbf30;
+  color: #ffbf30;
+  font-style: italic;
+  background: rgba(255, 191, 48, 0.06);
+}
+.slidev-layout blockquote p { color: #ffbf30; }
+
+/* Lists / paragraphs */
+.slidev-layout li,
+.slidev-layout p { color: #e0e0e0; }
+
+/* Mermaid transparent */
+.mermaid,
+.mermaid svg { background: transparent !important; }
+
+/* ── brand pops ──────────────────────────────────────────────────────── */
+
+/* #1 — a short blue→green accent tick under every section header */
+.slidev-layout h2 {
+  padding-bottom: 0.3em;
+  background-image: linear-gradient(90deg, #829df3, #77f19a);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 2.75rem 2px;
+}
+
+/* #2 — layout:center slides read as real dividers: larger title, centered accent */
+.slidev-layout.center h1,
+.slidev-layout.center h2 {
+  font-size: 2.7rem;
+  line-height: 1.18;
+  background-position: center bottom;
+  background-size: 4rem 3px;
+  padding-bottom: 0.36em;
+}
+
+/* the closing statement is two <h2> lines — suppress the accent so it's one clean statement, not two underlines */
+.slidev-layout.end h2,
+.end h2 {
+  background-image: none;
+  padding-bottom: 0.12em;
+}

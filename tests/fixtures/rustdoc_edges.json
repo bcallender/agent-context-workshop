@@ -1,0 +1,27 @@
+{
+  "root": 0,
+  "crate_version": null,
+  "includes_private": false,
+  "index": {
+    "0": {"id": 0, "crate_id": 0, "name": "edgecrate", "span": null, "visibility": "public", "docs": null, "inner": {"module": {"is_crate": true, "items": [1, 2, 3, 4, 5, 7, 9], "is_stripped": false}}},
+    "1": {"id": 1, "crate_id": 0, "name": "Widget", "span": {"filename": "src/lib.rs", "begin": [1, 1], "end": [3, 2]}, "visibility": "public", "docs": null, "inner": {"struct": {"kind": {"plain": {"fields": [10], "has_stripped_fields": false}}}}},
+    "2": {"id": 2, "crate_id": 0, "name": "Part", "span": {"filename": "src/lib.rs", "begin": [5, 1], "end": [5, 20]}, "visibility": "public", "docs": null, "inner": {"struct": {"kind": {"unit": true}}}},
+    "3": {"id": 3, "crate_id": 0, "name": "Draw", "span": {"filename": "src/lib.rs", "begin": [7, 1], "end": [7, 20]}, "visibility": "public", "docs": null, "inner": {"trait": {"is_auto": false, "is_unsafe": false, "items": [], "generics": {"params": [], "where_predicates": []}, "bounds": [], "implementations": []}}},
+    "4": {"id": 4, "crate_id": 0, "name": null, "span": null, "visibility": "public", "docs": null, "inner": {"impl": {"is_unsafe": false, "generics": {"params": [], "where_predicates": []}, "provided_trait_methods": [], "trait": {"path": "Draw", "id": 3, "args": null}, "for": {"resolved_path": {"path": "Widget", "id": 1, "args": null}}, "items": [], "negative": false, "synthetic": false, "blanket_impl": null}}},
+    "5": {"id": 5, "crate_id": 0, "name": null, "span": null, "visibility": "public", "docs": null, "inner": {"impl": {"is_unsafe": false, "generics": {"params": [], "where_predicates": []}, "provided_trait_methods": [], "trait": null, "for": {"resolved_path": {"path": "Widget", "id": 1, "args": null}}, "items": [6], "negative": false, "synthetic": false, "blanket_impl": null}}},
+    "6": {"id": 6, "crate_id": 0, "name": "make", "span": {"filename": "src/lib.rs", "begin": [10, 5], "end": [12, 6]}, "visibility": "public", "docs": null, "inner": {"function": {"sig": {"inputs": [["part", {"resolved_path": {"path": "Part", "id": 2, "args": null}}]], "output": {"resolved_path": {"path": "Widget", "id": 1, "args": null}}, "is_c_variadic": false}, "generics": {"params": [], "where_predicates": []}, "header": {"is_const": false, "is_unsafe": false, "is_async": false, "abi": "Rust"}}}},
+    "7": {"id": 7, "crate_id": 0, "name": "wrap", "span": {"filename": "src/lib.rs", "begin": [14, 1], "end": [16, 2]}, "visibility": "public", "docs": null, "inner": {"function": {"sig": {"inputs": [["w", {"resolved_path": {"path": "Widget", "id": 1, "args": null}}]], "output": {"resolved_path": {"path": "Holder", "id": 9, "args": {"angle_bracketed": {"args": [{"type": {"resolved_path": {"path": "Part", "id": 2, "args": null}}}], "constraints": []}}}}, "is_c_variadic": false}, "generics": {"params": [], "where_predicates": []}, "header": {"is_const": false, "is_unsafe": false, "is_async": false, "abi": "Rust"}}}},
+    "9": {"id": 9, "crate_id": 0, "name": "Holder", "span": {"filename": "src/lib.rs", "begin": [18, 1], "end": [18, 30]}, "visibility": "public", "docs": null, "inner": {"struct": {"kind": {"plain": {"fields": [], "has_stripped_fields": false}}}}},
+    "10": {"id": 10, "crate_id": 0, "name": "part", "span": {"filename": "src/lib.rs", "begin": [2, 5], "end": [2, 20]}, "visibility": "public", "docs": null, "inner": {"struct_field": {"resolved_path": {"path": "Part", "id": 2, "args": null}}}}
+  },
+  "paths": {
+    "1": {"crate_id": 0, "path": ["edgecrate", "Widget"], "kind": "struct"},
+    "2": {"crate_id": 0, "path": ["edgecrate", "Part"], "kind": "struct"},
+    "3": {"crate_id": 0, "path": ["edgecrate", "Draw"], "kind": "trait"},
+    "6": {"crate_id": 0, "path": ["edgecrate", "Widget", "make"], "kind": "function"},
+    "7": {"crate_id": 0, "path": ["edgecrate", "wrap"], "kind": "function"},
+    "9": {"crate_id": 0, "path": ["edgecrate", "Holder"], "kind": "struct"}
+  },
+  "external_crates": {},
+  "format_version": 57
+}
